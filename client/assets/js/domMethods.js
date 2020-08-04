@@ -71,7 +71,7 @@ export function renderArticles(articleData, loadPage) {
 function createArticles(articleData, loadPage) {
   const fragment = document.createDocumentFragment();
 
-  articleData.forEach(data => {
+  articleData && articleData.forEach(data => {
     const article = createArticle(data, loadPage);
     fragment.appendChild(article);
   });
@@ -178,7 +178,7 @@ export function createElement(type, attributes, ...children) {
     }
   }
 
-  children.forEach(child => {
+  children && children.forEach(child => {
     if (typeof child === "boolean" || child === null || child === undefined) {
       return;
     }
